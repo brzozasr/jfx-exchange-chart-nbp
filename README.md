@@ -11,8 +11,7 @@ jfx-exchange-chart-nbp is licensed under **Apache Software License, Version 2.0*
 ### Examples:
 Table A:
 ```java
-try {
-        private void tableA(String code) {
+private void tableA(String code) {
         try {
             CurrencyCodeTableA currencyCodeTableA = CurrencyCodeTableA.valueOf(code);
 
