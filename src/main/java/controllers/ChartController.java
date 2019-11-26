@@ -24,9 +24,6 @@ import models.ratesc.RateC;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class ChartController implements Initializable {
