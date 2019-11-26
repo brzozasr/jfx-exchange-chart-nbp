@@ -9,7 +9,7 @@ jfx-exchange-chart-nbp is licensed under **Apache Software License, Version 2.0*
 * Version 1.0-SNAPSHOT released on 26-Nov-2019.
 ***
 ### Examples:
-Table A
+Table A:
 ```java
 try {
         private void tableA(String code) {
@@ -44,7 +44,7 @@ try {
         }
     }
 ```
-Table B
+Table B:
 ```java
 private void tableB(String code) {
         try {
@@ -78,7 +78,7 @@ private void tableB(String code) {
         }
     }
 ```
-Table C
+Table C:
 ```java
 private void tableC(String code) {
         try {
@@ -120,7 +120,7 @@ private void tableC(String code) {
         }
     }
 ```
-Gold prices
+Gold prices:
 ```java
 private void goldPrice() {
         try {
@@ -133,7 +133,8 @@ private void goldPrice() {
             XYChart.Series dataSeries = new XYChart.Series();
             dataSeries.setName("Gold prices");
             for (GoldPrice element : arrayOfGoldPrice.getGoldQuotations()) {
-                dataSeries.getData().add(new XYChart.Data<>(String.valueOf(element.getDate()), element.getPrice()));
+                dataSeries.getData().add(new XYChart.Data<>(
+                String.valueOf(element.getDate()), element.getPrice()));
             }
             lineChart.setCreateSymbols(false);
             numberAxis.setForceZeroInRange(false);
@@ -150,4 +151,4 @@ private void goldPrice() {
             e.printStackTrace();
         }
     }
-    ```
+```
