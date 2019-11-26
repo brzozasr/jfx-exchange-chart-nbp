@@ -25,7 +25,7 @@
    <top>
       <HBox fx:id="hBox" alignment="CENTER" prefWidth="850.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <ComboBox fx:id="cbTables" onAction="#changeCbOnAction" prefWidth="100.0" />
+            <ComboBox fx:id="cbTables" onAction="#cbTablesOnAction" prefWidth="100.0" />
          </children>
       </HBox>
    </top>

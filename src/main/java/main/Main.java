@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/chart.fxml"));
-        primaryStage.setTitle("JFX exchange rares chart NBP");
+        primaryStage.setTitle("JFX exchange rates chart NBP");
         primaryStage.setScene(new Scene(root, 850, 500));
         primaryStage.show();
     }
