@@ -135,25 +135,19 @@ public class ChartController implements Initializable {
 
             ExchangeRatesSeries exchangeRatesSeries = new TableA().currencyExchangeRate(currencyCodeTableA);
 
-            List<Rate> list = exchangeRatesSeries.getRates();
-            List<Double> mid = new ArrayList<>();
-            for (Rate mids : list) {
-                mid.add(mids.getMid());
-            }
-            double lower = Collections.min(mid);
-            double upper = Collections.max(mid);
-
-            numberAxis.setLowerBound(lower);
-            numberAxis.setUpperBound(upper);
+            numberAxis.setLowerBound(exchangeRatesSeries.getMin());
+            numberAxis.setUpperBound(exchangeRatesSeries.getMax());
             numberAxis.setLabel("PLN (złoty)");
 
             XYChart.Series dataSeries = new XYChart.Series();
             dataSeries.setName(code);
             for (Rate element : exchangeRatesSeries.getRates()) {
-                dataSeries.getData().add(new XYChart.Data<>(element.getEffectiveDate(), element.getMid()));
+                dataSeries.getData().add(new XYChart.Data<>(String.valueOf(element.getEffectiveDate()), element.getMid()));
             }
             lineChart.setCreateSymbols(false);
             numberAxis.setForceZeroInRange(false);
+            lineChart.setHorizontalGridLinesVisible(true);
+            lineChart.setVerticalGridLinesVisible(false);
 
             categoryAxis.setAnimated(false);
             numberAxis.setAnimated(true);
@@ -172,25 +166,19 @@ public class ChartController implements Initializable {
 
             ExchangeRatesSeries exchangeRatesSeries = new TableB().currencyExchangeRate(currencyCodeTableB);
 
-            List<Rate> list = exchangeRatesSeries.getRates();
-            List<Double> mid = new ArrayList<>();
-            for (Rate mids : list) {
-                mid.add(mids.getMid());
-            }
-            double lower = Collections.min(mid);
-            double upper = Collections.max(mid);
-
-            numberAxis.setLowerBound(lower);
-            numberAxis.setUpperBound(upper);
+            numberAxis.setLowerBound(exchangeRatesSeries.getMin());
+            numberAxis.setUpperBound(exchangeRatesSeries.getMax());
             numberAxis.setLabel("PLN (złoty)");
 
             XYChart.Series dataSeries = new XYChart.Series();
             dataSeries.setName(code);
             for (Rate element : exchangeRatesSeries.getRates()) {
-                dataSeries.getData().add(new XYChart.Data<>(element.getEffectiveDate(), element.getMid()));
+                dataSeries.getData().add(new XYChart.Data<>(String.valueOf(element.getEffectiveDate()), element.getMid()));
             }
             lineChart.setCreateSymbols(false);
             numberAxis.setForceZeroInRange(false);
+            lineChart.setHorizontalGridLinesVisible(true);
+            lineChart.setVerticalGridLinesVisible(false);
 
             categoryAxis.setAnimated(false);
             numberAxis.setAnimated(true);
@@ -209,49 +197,26 @@ public class ChartController implements Initializable {
 
             ExchangeRatesSeriesC exchangeRatesSeriesC = new TableC().currencyExchangeRate(currencyCodeTableC);
 
-            List<RateC> listBid = exchangeRatesSeriesC.getRates();
-            List<Double> bid = new ArrayList<>();
-            for (RateC bids : listBid) {
-                bid.add(bids.getBid());
-            }
-            double lowerBid = Collections.min(bid);
-            double upperBid = Collections.max(bid);
-
-            List<RateC> listAsk = exchangeRatesSeriesC.getRates();
-            List<Double> ask = new ArrayList<>();
-            for (RateC asks : listAsk) {
-                ask.add(asks.getBid());
-            }
-            double lowerAsk = Collections.min(ask);
-            double upperAsk = Collections.max(ask);
-
-            List<Double> average = new ArrayList<>();
-            average.add(lowerBid);
-            average.add(lowerAsk);
-            average.add(upperBid);
-            average.add(upperAsk);
-
-            double lower = Collections.min(average);
-            double upper = Collections.max(average);
-
-            numberAxis.setLowerBound(lower);
-            numberAxis.setUpperBound(upper);
+            numberAxis.setLowerBound(exchangeRatesSeriesC.getMin());
+            numberAxis.setUpperBound(exchangeRatesSeriesC.getMax());
             numberAxis.setLabel("PLN (złoty)");
 
             XYChart.Series dataSeriesBid = new XYChart.Series();
             dataSeriesBid.setName(code + " - buy prices  ");
             for (RateC element : exchangeRatesSeriesC.getRates()) {
-                dataSeriesBid.getData().add(new XYChart.Data<>(element.getEffectiveDate(), element.getBid()));
+                dataSeriesBid.getData().add(new XYChart.Data<>(String.valueOf(element.getEffectiveDate()), element.getBid()));
             }
 
             XYChart.Series dataSeriesAsk = new XYChart.Series();
             dataSeriesAsk.setName(code + " - sell prices");
             for (RateC element : exchangeRatesSeriesC.getRates()) {
-                dataSeriesAsk.getData().add(new XYChart.Data<>(element.getEffectiveDate(), element.getAsk()));
+                dataSeriesAsk.getData().add(new XYChart.Data<>(String.valueOf(element.getEffectiveDate()), element.getAsk()));
             }
 
             lineChart.setCreateSymbols(false);
             numberAxis.setForceZeroInRange(false);
+            lineChart.setHorizontalGridLinesVisible(true);
+            lineChart.setVerticalGridLinesVisible(false);
 
             categoryAxis.setAnimated(false);
             numberAxis.setAnimated(true);
@@ -268,16 +233,8 @@ public class ChartController implements Initializable {
         try {
             ArrayOfGoldPrice arrayOfGoldPrice = new Gold().allGoldPrice();
 
-            List<GoldPrice> list = arrayOfGoldPrice.getGoldQuotations();
-            List<Double> price = new ArrayList<>();
-            for (GoldPrice prices : list) {
-                price.add(prices.getPrice());
-            }
-            double lower = Collections.min(price);
-            double upper = Collections.max(price);
-
-            numberAxis.setLowerBound(lower);
-            numberAxis.setUpperBound(upper);
+            numberAxis.setLowerBound(arrayOfGoldPrice.getMin());
+            numberAxis.setUpperBound(arrayOfGoldPrice.getMax());
             numberAxis.setLabel("PLN (złoty)");
 
             XYChart.Series dataSeries = new XYChart.Series();
@@ -287,6 +244,8 @@ public class ChartController implements Initializable {
             }
             lineChart.setCreateSymbols(false);
             numberAxis.setForceZeroInRange(false);
+            lineChart.setHorizontalGridLinesVisible(true);
+            lineChart.setVerticalGridLinesVisible(false);
 
             categoryAxis.setAnimated(false);
             numberAxis.setAnimated(true);

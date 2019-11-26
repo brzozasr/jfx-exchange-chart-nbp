@@ -36,7 +36,7 @@
         <dependency>
             <groupId>com.github.brzozasr</groupId>
             <artifactId>exchange-rates-nbp</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
