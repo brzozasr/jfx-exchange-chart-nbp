@@ -1,6 +1,7 @@
 # jfx-exchange-chart-nbp
 
 #### An example of using the repository (exchange-rates-nbp API for Java) with JavaFx /LineChart/ (exchange rates and gold prices NBP /Narodowy Bank Polski, National Bank of Poland/ API).
+[NBP API Java](https://github.com/brzozasr/exchange-rates-nbp "NBP API Java")
 ***
 ### License
 jfx-exchange-chart-nbp is licensed under **Apache Software License, Version 2.0**.
